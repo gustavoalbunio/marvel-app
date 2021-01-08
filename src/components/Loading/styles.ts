@@ -16,7 +16,6 @@ export const Container = styled.div`
   height: 80px;
 
   div {
-    box-sizing: border-box;
     display: block;
     position: absolute;
     width: 64px;
