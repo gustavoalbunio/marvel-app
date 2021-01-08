@@ -69,8 +69,8 @@ export const Search = styled.div`
 
 export const Content = styled.div<ContentProps>`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 48px 18px;
+  grid-template-columns: repeat(3, 1fr);
 
   button {
     background: none;
@@ -133,9 +133,15 @@ export const Content = styled.div<ContentProps>`
       }
     `}
 
-  @media (min-width: 1054px) {
+  @media (max-width: 900px) {
     & {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 500px) {
+    & {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 `;
