@@ -36,7 +36,7 @@
 
 Na tela inicial do app já são exibidos alguns personagens, porém, é possível realizar uma busca por nome, utilizando o campo de buscar logo abaixo do logo do app.
 
-## :rocket: Tecnologias
+## Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias
 
