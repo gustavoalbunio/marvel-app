@@ -1,4 +1,8 @@
-# Marvel App
+<h1 align="center">
+    <img alt="Marvel App" src="https://upload.wikimedia.org/wikipedia/commons/0/04/MarvelLogo.svg" width="30%" />
+    <br>
+    Marvel App
+</h1>
 
 ### Busca de personagens da Marvel
 
@@ -18,7 +22,7 @@ Um app para buscar algumas informações acerca dos personagens da Marvel
 
 `yarn`
 
-- Então execute o projeto com o comando abaixo ou [clique aqui](https://marvel-web.netlify.app/):
+- Então execute o projeto com o comando abaixo ou [clique aqui](https://marvel-web.netlify.app/) para vizualizar a demo:
 
 `yarn start`
 
