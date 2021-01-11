@@ -4,9 +4,15 @@
     Marvel App
 </h1>
 
-### Busca de personagens da Marvel
+<h4 align="center">
+  Saiba mais sobre os seus personagens favoritos.
+</h4>
 
-Um app para buscar algumas informações acerca dos personagens da Marvel
+<p align="center">
+  <a href="https://marvel-web.netlify.app/" target="_blank">
+    <img alt="Demo on Netlify" src="https://res.cloudinary.com/lukemorales/image/upload/v1599785319/readme_logos/demo_on_netlify_umjmch.png">
+  </a>
+</p>
 
 ## Para começar:
 
@@ -29,3 +35,22 @@ Um app para buscar algumas informações acerca dos personagens da Marvel
 ## Como utilizar:
 
 Na tela inicial do app já são exibidos alguns personagens, porém, é possível realizar uma busca por nome, utilizando o campo de buscar logo abaixo do logo do app.
+
+## :rocket: Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias
+
+- [ReactJS](https://reactjs.org/)
+- [Typescript][ts]
+- [react-router-dom](https://github.com/ReactTraining/react-router)
+- [styled-components](https://www.styled-components.com/)
+- [VS Code][vscode] com [EditorConfig][vceditconfig] e [ESLint][vceslint]
+
+## :memo: Licença
+
+This project is under the MIT license. See the [LICENSE](https://github.com/lukemorales/bancointer/blob/master/LICENSE) for more information.
+
+[ts]: https://www.typescriptlang.org
+[vscode]: https://code.visualstudio.com/
+[vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+[vceditconfig]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
