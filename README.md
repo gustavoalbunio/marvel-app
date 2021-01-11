@@ -46,10 +46,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias
 - [styled-components](https://www.styled-components.com/)
 - [VS Code][vscode] com [EditorConfig][vceditconfig] e [ESLint][vceslint]
 
-## :memo: Licença
-
-This project is under the MIT license. See the [LICENSE](https://github.com/lukemorales/bancointer/blob/master/LICENSE) for more information.
-
 [ts]: https://www.typescriptlang.org
 [vscode]: https://code.visualstudio.com/
 [vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
