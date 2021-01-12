@@ -34,7 +34,7 @@ const Characters: React.FC = () => {
   const handleGetCharacters = useCallback((search?: string) => {
     setLoading(true);
     api
-      .get('/characters1', {
+      .get('/characters', {
         params: {
           ...(search && { name: search }),
         },
