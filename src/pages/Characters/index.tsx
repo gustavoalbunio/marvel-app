@@ -34,7 +34,7 @@ const Characters: React.FC = () => {
   const handleGetCharacters = useCallback((search?: string) => {
     setLoading(true);
     api
-      .get('/characters', {
+      .get('/characters1', {
         params: {
           ...(search && { name: search }),
         },
@@ -54,7 +54,8 @@ const Characters: React.FC = () => {
           );
           setLoading(false);
         },
-      );
+      )
+      .catch(() => setLoading(false));
   }, []);
 
   useEffect(() => {

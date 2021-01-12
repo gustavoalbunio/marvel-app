@@ -42,26 +42,29 @@ const Character: React.FC = () => {
 
     const { id, name, description, thumbnail } = state as Character;
 
-    api.get(`/characters/${id}/comics`).then(
-      ({
-        data: {
-          data: { results },
+    api
+      .get(`/characters/${id}/comics`)
+      .then(
+        ({
+          data: {
+            data: { results },
+          },
+        }) => {
+          setCharacter({
+            id,
+            name,
+            description,
+            thumbnail,
+            comics: results.filter(
+              (r: Character) =>
+                r.thumbnail.path !==
+                'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available',
+            ),
+          });
+          setLoading(false);
         },
-      }) => {
-        setCharacter({
-          id,
-          name,
-          description,
-          thumbnail,
-          comics: results.filter(
-            (r: Character) =>
-              r.thumbnail.path !==
-              'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available',
-          ),
-        });
-        setLoading(false);
-      },
-    );
+      )
+      .catch(() => setLoading(false));
   }, [history]);
 
   return (
