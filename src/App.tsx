@@ -5,11 +5,11 @@ import Router from './routes';
 
 import GlobalStyles from './styles/global';
 
-const App: React.FC = () => (
-  <BrowserRouter>
-    <Router />
-    <GlobalStyles />
-  </BrowserRouter>
-);
-
-export default App;
+export function App() {
+  return (
+    <BrowserRouter>
+      <Router />
+      <GlobalStyles />
+    </BrowserRouter>
+  );
+}

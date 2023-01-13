@@ -4,8 +4,7 @@ import { FaTimes } from 'react-icons/fa';
 
 import api from '../../services/api';
 
-import Character from '../Character';
-import Loading from '../../components/Loading';
+import { Loading } from '../../components/Loading';
 
 import { Container, Section, Search, Content } from './styles';
 
@@ -21,11 +20,12 @@ interface CharacterProps {
   description: string;
 }
 
-const Characters: React.FC = () => {
+export function Characters() {
   const navigate = useNavigate();
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent,
-  );
+  const isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    );
 
   const [characters, setCharacter] = useState<CharacterProps[]>([]);
   const [loading, setLoading] = useState(true);
@@ -47,7 +47,7 @@ const Characters: React.FC = () => {
         }) => {
           setCharacter(
             results.filter(
-              (r: Character) =>
+              (r: CharacterProps) =>
                 r.thumbnail.path !==
                 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available',
             ),
@@ -89,7 +89,7 @@ const Characters: React.FC = () => {
             path: character.thumbnail.path,
           },
           description: character.description,
-        }
+        },
       });
     },
     [navigate],
@@ -127,28 +127,24 @@ const Characters: React.FC = () => {
           <Loading />
         </Section>
       ) : (
-        <>
-          <Content isMobile={isMobile}>
-            {characters.map(character => (
-              <button
-                key={character.id}
-                type="button"
-                onClick={() => handleCharacter(character)}
-              >
-                <img
-                  src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                  alt={character.name}
-                />
-                <div>
-                  <h2>{character.name}</h2>
-                </div>
-              </button>
-            ))}
-          </Content>
-        </>
+        <Content isMobile={isMobile}>
+          {characters.map(character => (
+            <button
+              key={character.id}
+              type="button"
+              onClick={() => handleCharacter(character)}
+            >
+              <img
+                src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                alt={character.name}
+              />
+              <div>
+                <h2>{character.name}</h2>
+              </div>
+            </button>
+          ))}
+        </Content>
       )}
     </Container>
   );
-};
-
-export default Characters;
+}

@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 
 import api from '../../services/api';
 
-import Loading from '../../components/Loading';
+import { Loading } from '../../components/Loading';
 
 import { Container, Banner, Content, LoadingContainer, Comics } from './styles';
 
@@ -31,7 +31,7 @@ interface Comic {
   };
 }
 
-const Character: React.FC = () => {
+export function Character() {
   const location = useLocation();
 
   const [character, setCharacter] = useState<Character>();
@@ -106,6 +106,4 @@ const Character: React.FC = () => {
       )}
     </Container>
   );
-};
-
-export default Character;
+}
