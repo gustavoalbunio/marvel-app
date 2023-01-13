@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 import api from '../../services/api';
 
@@ -32,13 +32,13 @@ interface Comic {
 }
 
 const Character: React.FC = () => {
-  const history = useHistory();
+  const location = useLocation();
 
   const [character, setCharacter] = useState<Character>();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const { state } = history.location;
+    const { state } = location;
 
     const { id, name, description, thumbnail } = state as Character;
 
@@ -65,7 +65,7 @@ const Character: React.FC = () => {
         },
       )
       .catch(() => setLoading(false));
-  }, [history]);
+  }, [location]);
 
   return (
     <Container>

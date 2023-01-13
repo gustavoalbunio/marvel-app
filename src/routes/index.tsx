@@ -1,14 +1,14 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Characters from '../pages/Characters';
 import Character from '../pages/Character';
 
-const Routes: React.FC = () => (
-  <Switch>
-    <Route path="/" exact component={Characters} />
-    <Route path="/character" exact component={Character} />
-  </Switch>
+const Router: React.FC = () => (
+    <Routes>
+      <Route path="/" element={<Characters />} />
+      <Route path="/character" element={<Character />} />
+    </Routes>
 );
 
-export default Routes;
+export default Router;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 
 import api from '../../services/api';
@@ -22,7 +22,7 @@ interface CharacterProps {
 }
 
 const Characters: React.FC = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent,
   );
@@ -80,17 +80,19 @@ const Characters: React.FC = () => {
 
   const handleCharacter = useCallback(
     (character: CharacterProps) => {
-      history.push('/character', {
-        id: character.id,
-        name: character.name,
-        thumbnail: {
-          extension: character.thumbnail.extension,
-          path: character.thumbnail.path,
-        },
-        description: character.description,
+      navigate('/character', {
+        state: {
+          id: character.id,
+          name: character.name,
+          thumbnail: {
+            extension: character.thumbnail.extension,
+            path: character.thumbnail.path,
+          },
+          description: character.description,
+        }
       });
     },
-    [history],
+    [navigate],
   );
 
   const handleClear = useCallback(() => {
